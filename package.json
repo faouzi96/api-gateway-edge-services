@@ -1,0 +1,31 @@
+{
+  "name": "api-gateway-edge-services",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "build": "rimraf build & npx tsc",
+    "serve": "concurrently \"rimraf build & npx tsc -W\" \"nodemon build/app.js\"",
+    "prestart": "npm run build",
+    "start": "node build/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.7",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5"
+  }
+}

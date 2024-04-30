@@ -1,0 +1,5 @@
+# external node modules
+node_modules
+
+# project build
+./build

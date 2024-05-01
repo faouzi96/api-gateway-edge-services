@@ -3,6 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * THIS APPLICATION WILL NOT WORK, FOR THE SIMPLE RAISON THAT THE CERTIFICATE AND THE PRIVATE KEY ARE NOT CORRECTLY GENERATED
+ */
 const express_1 = __importDefault(require("express"));
 const fs_1 = require("fs");
 const https_1 = __importDefault(require("https"));

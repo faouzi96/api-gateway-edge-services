@@ -7,9 +7,19 @@ apiEndpoints:
   api:
     host: localhost
     paths: '/api'
+  user:
+    host: localhost
+    paths: ["/user", "/user/*"]
+  class:
+    host: localhost
+    paths: ["/class", "/class/*"]
 serviceEndpoints:
   httpbin:
-    url: 'http://localhost:3000'
+    url: 'https://httpbin.org'
+  userService:
+    url: "http://localhost:3000"
+  classService:
+    url: "http://localhost:4000"
 policies:
   - basic-auth
   - cors
@@ -26,7 +36,24 @@ pipelines:
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
     # - key-auth:
+      - oauth2:
       - proxy:
           - action:
               serviceEndpoint: httpbin 
               changeOrigin: true
+  userPipeline:
+    apiEndpoints:
+      - user
+    policies:
+      - proxy:
+          - action:
+               serviceEndpoint: userService
+               changeOrigin: true
+  classPipeline:
+    apiEndpoints:
+       - class
+    policies:
+      - proxy:
+          - action:
+               serviceEndpoint: classService
+               changeOrigin: true   

@@ -10,7 +10,7 @@
     "build": "rimraf build & npx tsc",
     "serve": "concurrently \"rimraf build & npx tsc -W\" \"nodemon build/app.js\"",
     "prestart:ci": "npm run build",
-    "start:ci": "node build/app.js"
+    "start:ci": "node build/appTLS.js"
   },
   "dependencies": {
     "express-gateway": "^1.16.11"
